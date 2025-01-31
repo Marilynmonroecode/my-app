@@ -18,7 +18,7 @@ const App = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5002/tasks');
+      const response = await fetch('https://backend-7dg6.onrender.com/tasks');
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -29,7 +29,7 @@ const App = () => {
   // Updated login handler to use backend
   const handleLogin = async (loginData) => {
     try {
-      const response = await fetch('http://127.0.0.1:5002/login', {
+      const response = await fetch('https://backend-7dg6.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(loginData),
@@ -53,7 +53,7 @@ const App = () => {
   // Updated registration handler to automatically log in after successful registration
   const handleRegister = async (registerData) => {
     try {
-      const response = await fetch('http://127.0.0.1:5002/register', {
+      const response = await fetch('hhttps://backend-7dg6.onrender.com/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(registerData),
@@ -74,7 +74,7 @@ const App = () => {
 
   const handleAddTask = async (newTask) => {
     try {
-      const response = await fetch('http://127.0.0.1:5002/tasks', {
+      const response = await fetch('https://backend-7dg6.onrender.com/tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newTask),
@@ -89,7 +89,7 @@ const App = () => {
   const handleUpdateTask = async (task) => {
     const updatedTask = { ...task, done: !task.done };
     try {
-      const response = await fetch(`http://127.0.0.1:5002/tasks/${task.id}`, {
+      const response = await fetch(`https://backend-7dg6.onrender.com/tasks/${task.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedTask),
@@ -103,7 +103,7 @@ const App = () => {
 
   const handleDeleteTask = async (id) => {
     try {
-      await fetch(`http://127.0.0.1:5002/tasks/${id}`, { method: 'DELETE' });
+      await fetch(`https://backend-7dg6.onrender.com/tasks/${id}`, { method: 'DELETE' });
       setTasks(tasks.filter((task) => task.id !== id));
     } catch (error) {
       console.error('Error deleting task:', error);
