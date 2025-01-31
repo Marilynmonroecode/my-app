@@ -53,7 +53,7 @@ const App = () => {
   // Updated registration handler to automatically log in after successful registration
   const handleRegister = async (registerData) => {
     try {
-      const response = await fetch('hhttps://backend-7dg6.onrender.com/register', {
+      const response = await fetch('https://backend-7dg6.onrender.com/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(registerData),
